@@ -7,4 +7,5 @@ public class Scene {
 
 	public List<String> assets = new ArrayList<>();
 	public List<String> entities = new ArrayList<>();
+	
 }

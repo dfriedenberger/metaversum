@@ -73,6 +73,9 @@ public class PageController {
 		
 		space.scenes.add(getScene(id,"base"));
 		space.scenes.add(getScene(id,"deco"));
+		ClassLoader cl = this.getClass().getClassLoader();
+
+		space.cycle = readText(cl.getResourceAsStream("space/"+id+"/cycle.js"), "UTF-8");
 
 		
 		return new ResponseEntity<Space>(space, HttpStatus.OK);
@@ -83,6 +86,7 @@ public class PageController {
 		
 		
 		ClassLoader cl = this.getClass().getClassLoader();
+
 		scene.assets.addAll(readLines(cl.getResourceAsStream("space/"+id+"/"+type+"_assets.txt"), "UTF-8"));
 		scene.entities.addAll(readLines(cl.getResourceAsStream("space/"+id+"/"+type+"_entities.txt"), "UTF-8"));
 
@@ -97,6 +101,19 @@ public class PageController {
 		    	String line = br.readLine().trim();
 		    	if(line.isEmpty()) continue;
 		        result.add(line);
+		    }
+		}	
+		return result;
+	}
+	
+	private String readText(InputStream is, String encoding) throws IOException {
+	    
+		String result = "";
+		 
+		try (BufferedReader br = new BufferedReader(new InputStreamReader(is,encoding))) {
+		    while (br.ready()) {
+		    	String line = br.readLine();
+		        result += line + "\n";
 		    }
 		}	
 		return result;

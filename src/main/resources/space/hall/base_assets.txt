@@ -1,0 +1,2 @@
+<img id="groundTexture" src="../img/floor.jpg">
+<img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg" crossorigin="anonymous">

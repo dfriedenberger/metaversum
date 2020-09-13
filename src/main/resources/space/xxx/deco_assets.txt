@@ -1,3 +1,0 @@
-<a-asset-item class="entity" id="parrot-model" src="../media/Parrot.glb"></a-asset-item>
-<a-asset-item class="entity" id="oak" src="../media/OakTree.gltf"></a-asset-item>
-<a-asset-item class="entity" id="archway" src="../media/Archway3.gltf"></a-asset-item>

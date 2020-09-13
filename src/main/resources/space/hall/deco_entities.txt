@@ -1,0 +1,5 @@
+<a-entity id="parrot" gltf-model="#parrot-model" position="0 2 -2" rotation="0 90 0" scale="0.01 0.01 0.01" play-all-model-animations></a-entity>
+<a-entity gltf-model="#oak" position="6 0 -15" rotation="0 30 0" scale="0.5 0.5 0.5"></a-entity>
+<a-entity gltf-model="#oak" position="-4 0 -10" rotation="0 90 0" scale="0.6 0.6 0.6"></a-entity>
+<a-entity gltf-model="#archway" position="5 0 -5" rotation="0 0 0" scale="0.005 0.005 0.005"></a-entity>
+<a-entity gltf-model="#avatar" position="5 -5 -3" rotation="0 0 0" scale="3 3 3"></a-entity>           
