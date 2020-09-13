@@ -79,7 +79,7 @@ $( document ).ready(function() {
     var scene = new Scene();
     setInterval(scene.cycle,100);
 
-    scene.load("http://xn--9q8h/space/xxx");
+    scene.load("/space/xxx");
     
     
    
@@ -154,7 +154,7 @@ function updateCameraPosition() {
         {
             scene.remove();
             resetCameraPosition();
-            scene.load("http://xn--9q8h/space/xxx");
+            scene.load("/space/xxx");
         }
     }
     else
