@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:text="${header}">title place holder</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/vorlage.css" >
+	</head>
+	
+
+	<body>
+
+		<main role="main">
+
+			<!-- Main jumbotron for a primary marketing message or call to action -->
+			<div class="jumbotron">
+				<div class="container">
+					<h1 th:text="${header}">header place holder</h1>
+				</div>
+			</div>
+
+			<div class="container">
+				<p th:text="${message}">Welcome place holder</p><br>
+				<a href="/player">Los geht es!</a><br>
+			</div> <!-- /container -->
+
+		</main>
+
+		<footer class="container">
+			<p>&copy; frittenburger.de 2020</p>
+		</footer>
+
+		<script src="js/jquery-3.4.1.min.js"></script>
+
+	
+
+	</body>
+
+</html>
