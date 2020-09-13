@@ -79,7 +79,7 @@ $( document ).ready(function() {
     var scene = new Scene();
     setInterval(scene.cycle,100);
 
-    scene.load("http://xn--9q8h/space/xxx");
+    scene.load("/space/xxx");
     
     
    
@@ -100,18 +100,24 @@ function resetCameraPosition() {
     var position = camera.getAttribute('position');
     var rotation = camera.getAttribute('rotation');
     
-  
+    var containerPosition = container.getAttribute('position');
+    var containerRotation = container.getAttribute('rotation');
 
     position.x = 0;
     position.y = 1;
     position.z = 0;
 
-    console.log("resetCameraPosition "+ JSON.stringify(rotation) );
-
     rotation.x = 0;
     rotation.y = 0;
     rotation.z = 0;
-    console.log("resetCameraPosition "+ JSON.stringify(rotation) );
+
+    containerPosition.x = 0;
+    containerPosition.y = 0;
+    containerPosition.z = 0;
+
+    containerRotation.x = 0;
+    containerRotation.y = 0;
+    containerRotation.z = 0;
 
 }
 
@@ -141,7 +147,9 @@ function updateCameraPosition() {
 	if(JSON.stringify(attr) != last_attr)
 	{
 	   last_attr = JSON.stringify(attr);
-	   console.log("Changed position "+ JSON.stringify(attr) );
+       console.log("Changed position "+ JSON.stringify(attr) );
+       $.post( "/position/xxx", last_attr );
+
 	}
 
 
@@ -154,7 +162,7 @@ function updateCameraPosition() {
         {
             scene.remove();
             resetCameraPosition();
-            scene.load("http://xn--9q8h/space/xxx");
+            scene.load("/space/xxx");
         }
     }
     else
