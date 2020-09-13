@@ -55,11 +55,13 @@ public class PageController {
 
 	@RequestMapping(
 		    value = "/position/{id}", 
-		    method = RequestMethod.POST)
-	public void process(@PathVariable("id") String id,@RequestBody Map<String, Object> payload) 
+		    method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Map<String,Object>> process(@PathVariable("id") String id,@RequestBody Map<String, Object> payload) 
 	    throws Exception {
 
 		logger.info(String.format("Payload %s", payload));
+		
+		return new ResponseEntity<Map<String,Object>>(payload, HttpStatus.OK);
 
 	}
 	

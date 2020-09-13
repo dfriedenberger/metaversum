@@ -148,7 +148,15 @@ function updateCameraPosition() {
 	{
 	   last_attr = JSON.stringify(attr);
        console.log("Changed position "+ JSON.stringify(attr) );
-       $.post( "/position/xxx", last_attr );
+
+
+       $.ajax( "/position/xxx", {
+        data : last_attr,
+        contentType : 'application/json',
+        type : 'POST',
+       });
+
+    
 
 	}
 
